@@ -1,0 +1,17 @@
+{
+    "containerOverrides": [
+        {
+            "name": "cat-fastq-container",
+            "environment": [
+                {
+                    "name": "INPUT_FILES",
+                    "value": "s3://another-bucket/different-input-files/*"
+                },
+                {
+                    "name": "OUTPUT_FILE",
+                    "value": "s3://another-bucket/different-output-file/merged.fastq.gz"
+                }
+            ]
+        }
+    ]
+}

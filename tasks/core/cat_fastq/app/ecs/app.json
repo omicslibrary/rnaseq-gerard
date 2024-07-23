@@ -1,0 +1,32 @@
+{
+    "family": "cat-fastq-task",
+    "containerDefinitions": [
+        {
+            "name": "cat-fastq-container",
+            "image": "XXXXXXXXXXXXX.dkr.ecr.us-east-1.amazonaws.com/cat_fastq:latest",
+            "memory": 512,
+            "cpu": 4,
+            "essential": true,
+            "environment": [
+                {
+                    "name": "INPUT_FILES",
+                    "value": "s3://your-bucket/input-files/*"
+                },
+                {
+                    "name": "OUTPUT_FILE",
+                    "value": "s3://your-bucket/output-file/merged.fastq.gz"
+                }
+            ],
+            "mountPoints": [],
+            "volumes": []
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "memory": "512",
+    "cpu": "4",
+    "executionRoleArn": "arn:aws:iam::XXXXXXXXXXXXX:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::XXXXXXXXXXXXX:role/ecsTaskRole"
+}
