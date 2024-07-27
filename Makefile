@@ -19,7 +19,7 @@ build: build-cat-fastq
 
 # Build targets
 build-cat-fastq:
-	cd $(DOCKERFILE_PATH_HEAD) && ./build.sh
+	cd $(DOCKERFILE_PATH_CAT_FASTQ) && ./build.sh
 
 # tag all images target
 tag: tag-ecr-cat-fastq
